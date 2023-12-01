@@ -2,6 +2,7 @@ package multimediaclass;
 import interfaces.Volume;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Audio extends Multimedia implements Volume
 {
@@ -9,9 +10,10 @@ public class Audio extends Multimedia implements Volume
     String titolo;
     int durata;
     int vol;
-    public Audio(String titolo, int durata)
+    public Audio(String titolo)
     {
-        this.durata=durata;
+        Random rndm=new Random();
+        this.durata=rndm.nextInt(1,10);
         this.titolo=titolo;
         this.vol=5; //volume di default
     }

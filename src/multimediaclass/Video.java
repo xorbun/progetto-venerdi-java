@@ -3,6 +3,7 @@ import interfaces.Volume;
 import interfaces.Luminosità;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Video extends Multimedia implements Volume, Luminosità
 {
@@ -11,9 +12,10 @@ public class Video extends Multimedia implements Volume, Luminosità
     int vol;
     int lum;
 
-    public Video(String titolo, int durata)
+    public Video(String titolo)
     {
-        this.durata=durata;
+        Random rndm=new Random();
+        this.durata=rndm.nextInt(1,10);
         this.titolo=titolo;
         this.vol=5; //volume di default
         this.lum=5; //luminosità di default
