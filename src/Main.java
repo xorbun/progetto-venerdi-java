@@ -11,11 +11,12 @@ public class Main
 {
     public static void main(String[] args)
     {
+        int i;
         System.out.println("cosa vuoi fare?");
         int selector;
         Multimedia [] riproduttore= new Multimedia[5];
         Scanner input=new Scanner(System.in);
-        for(int i=0;i< riproduttore.length;i++)
+        for( i=0;i< riproduttore.length;i++)
         {
             System.out.println("1)inserisci nuova canzone-2)inserisci nuovo video-3)inserisci nuova immagine");
             selector=input.nextInt();
@@ -50,26 +51,89 @@ public class Main
                 }
             }
         }
-        for(int i=0;i<riproduttore.length;i++)
+
+        System.out.println(i+")cosa vuoi riprodurre?");
+        for( i=0;i<riproduttore.length;i++)
         {
-            System.out.println(i+")cosa vuoi riprodurre?");
             System.out.println(riproduttore[i]);
         }
         Scanner input2=new Scanner(System.in);
         int j=input2.nextInt();
         if(riproduttore[j] instanceof Audio)
         {
-            ((Audio) riproduttore[j]).play();
+            System.out.println("1)alza volume-2)abbassa volume-3)niente");
+            int volu=input2.nextInt();
+            switch (volu)
+            {
+                case 1:
+                {
+                    ((Audio) riproduttore[j]).alzavol();
+                    ((Audio) riproduttore[j]).play();
+                    break;
+                }
+                case 2:
+                {
+                    ((Audio) riproduttore[j]).abbassavol();
+                    ((Audio) riproduttore[j]).play();
+                }
+                case 3:
+                {
+                    ((Audio) riproduttore[j]).play();
+                }
+            }
+
+
         }
         else if(riproduttore[j] instanceof Video)
         {
-            ((Video) riproduttore[j]).play();
-            ((Video) riproduttore[j]).show();
+            System.out.println("1)alza volume e luminosità-2)abbassa volume e luminosità-3)niente");
+            int volu=input2.nextInt();
+            switch (volu)
+            {
+                case 1:
+                {
+                    ((Video) riproduttore[j]).alzavol();
+                    ((Video) riproduttore[j]).alzalum();
+                    ((Video) riproduttore[j]).play();
+                    ((Video) riproduttore[j]).show();
+                }
+                case 2:
+                {
+                    ((Video) riproduttore[j]).abbassavol();
+                    ((Video) riproduttore[j]).abbassalum();
+                    ((Video) riproduttore[j]).play();
+                    ((Video) riproduttore[j]).show();
+                }
+                case 3:
+                {
+                    ((Video) riproduttore[j]).play();
+                    ((Video) riproduttore[j]).show();
+                }
+            }
+
         }
         else if(riproduttore[j] instanceof Immagine)
         {
-            ((Immagine) riproduttore[j]).show();
-        }
+            System.out.println("1)alza  luminosità-2)abbassa  luminosità-3)niente");
+            int volu=input2.nextInt();
+            switch (volu)
+            {
+                case 1:
+                {
+                    ((Immagine) riproduttore[j]).alzalum();
+                    ((Immagine) riproduttore[j]).show();
+                }
+                case 2:
+                {
+                    ((Immagine) riproduttore[j]).abbassalum();
+                    ((Immagine) riproduttore[j]).show();
+                }
+                case 3:
+                {
+                    ((Immagine) riproduttore[j]).show();
+                }
+            }
+         }
         input.close();
     }
 }
