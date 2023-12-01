@@ -1,10 +1,10 @@
 package multimediaclass;
 import interfaces.Volume;
-
+import interfaces.play;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Audio extends Multimedia implements Volume
+public class Audio extends Multimedia implements Volume,play
 {
 
     String titolo;

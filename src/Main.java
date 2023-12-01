@@ -12,16 +12,14 @@ public class Main
     public static void main(String[] args)
     {
         System.out.println("cosa vuoi fare?");
-        System.out.println("1)inserisci nuova canzone-2)inserisci nuovo video-3)inserisci nuova immagine");
         int selector;
         Multimedia [] riproduttore= new Multimedia[5];
-
-        int selectore=0;
         Scanner input=new Scanner(System.in);
         for(int i=0;i< riproduttore.length;i++)
         {
-            selectore=input.nextInt();
-            switch (selectore)
+            System.out.println("1)inserisci nuova canzone-2)inserisci nuovo video-3)inserisci nuova immagine");
+            selector=input.nextInt();
+            switch (selector)
             {
                 case 1:
                 {
@@ -30,7 +28,7 @@ public class Main
                    String titolo=input2.nextLine();
                    Audio canzone=new Audio(titolo);
                    riproduttore[i]=canzone;
-                   input2.close();
+
                    break;
                 }
                 case 2:
@@ -39,8 +37,8 @@ public class Main
                     Scanner input2=new Scanner(System.in);
                     String titolo=input2.nextLine();
                     Video film=new Video(titolo);
-                     riproduttore[i]=film;
-                    input2.close();
+                    riproduttore[i]=film;
+
                     break;
                 }
                 case 3:
@@ -49,17 +47,16 @@ public class Main
                     Scanner input2=new Scanner(System.in);
                     String nome=input2.nextLine();
                     Immagine foto=new Immagine(nome);
-
                     riproduttore[i]=foto;
                     break;
                 }
             }
-            input.close();
+
         }
         for(int i=0;i<riproduttore.length;i++)
         {
             System.out.println(riproduttore[i]);
         }
-
+        input.close();
     }
 }

@@ -1,9 +1,9 @@
 package multimediaclass;
 import interfaces.Luminosità;
-
+import interfaces.show;
 import java.util.Arrays;
 
-public class Immagine extends Multimedia implements Luminosità
+public class Immagine extends Multimedia implements Luminosità,show
 {
     String titolo;
     int lum;

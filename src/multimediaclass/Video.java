@@ -1,11 +1,13 @@
 package multimediaclass;
 import interfaces.Volume;
 import interfaces.Luminosità;
+import interfaces.play;
+import interfaces.show;
 
 import java.util.Arrays;
 import java.util.Random;
 
-public class Video extends Multimedia implements Volume, Luminosità
+public class Video extends Multimedia implements Volume, Luminosità,play,show
 {
     String titolo;
     int durata;

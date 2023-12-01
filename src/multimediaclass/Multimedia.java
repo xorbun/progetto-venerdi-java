@@ -7,12 +7,5 @@ public abstract class Multimedia
     {
 
     }
-    public void play()
-    {
 
-    }
-    public void show()
-    {
-
-    }
 }
