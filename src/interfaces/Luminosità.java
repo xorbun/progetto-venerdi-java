@@ -1,6 +1,6 @@
 package interfaces;
 
-public interface luminosità
+public interface Luminosità
 {
     public void alzalum();
     public void abbassalum();

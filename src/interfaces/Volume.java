@@ -1,6 +1,6 @@
 package interfaces;
 
-public interface volume
+public interface Volume
 {
     public void alzavol();
 
