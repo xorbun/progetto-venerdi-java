@@ -2,8 +2,7 @@ import multimediaclass.Multimedia;
 import multimediaclass.Audio;
 import multimediaclass.Video;
 import multimediaclass.Immagine;
-import interfaces.Volume;
-import interfaces.Luminosità;
+
 
 import java.util.Scanner;
 
@@ -51,11 +50,10 @@ public class Main
                 }
             }
         }
-
-        System.out.println(i+")cosa vuoi riprodurre?");
+        System.out.println("cosa vuoi riprodurre?");
         for( i=0;i<riproduttore.length;i++)
         {
-            System.out.println(riproduttore[i]);
+            System.out.println(i+")"+riproduttore[i]);
         }
         Scanner input2=new Scanner(System.in);
         int j=input2.nextInt();
@@ -81,8 +79,6 @@ public class Main
                     ((Audio) riproduttore[j]).play();
                 }
             }
-
-
         }
         else if(riproduttore[j] instanceof Video)
         {
@@ -110,7 +106,6 @@ public class Main
                     ((Video) riproduttore[j]).show();
                 }
             }
-
         }
         else if(riproduttore[j] instanceof Immagine)
         {
