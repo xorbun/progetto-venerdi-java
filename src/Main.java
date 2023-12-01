@@ -28,28 +28,57 @@ public class Main
                 {
                     String titolo=input2.nextLine();
                     canzone[i]=new Audio(titolo);
-
                 }
                 for(int i=0;i<5;i++)
                 {
-                    System.out.println(canzone[i].toString());
+                    System.out.println("quale canzone vuoi riprodurre?");
+                    System.out.println(i+")"+canzone[i].toString());
                 }
+                int selector2=input2.nextInt();
+                
+
+                canzone[selector2].play();
                 input2.close();
                 break;
             }
             case 2:
             {
                 Scanner input2=new Scanner(System.in);
-                String titolo=input2.nextLine();
-                Video film= new Video(titolo);
+                System.out.println("inserisci il titolo di 5 film");
+                Video[]film=new Video[5];
+                for(int i=0;i<5;i++)
+                {
+                    String titolo=input2.nextLine();
+                    film[i]=new Video(titolo);
+                }
+                for(int i=0;i<5;i++)
+                {
+                    System.out.println("quale film vuoi riprodurre?");
+                    System.out.println(i+")"+film[i].toString());
+                }
+                int selector2=input2.nextInt();
+                film[selector2].play();
+                film[selector2].show();
                 input2.close();
                 break;
             }
             case 3:
             {
+                System.out.println("inserisci il titolo di 5 immagini");
                 Scanner input2=new Scanner(System.in);
-                String nome=input2.nextLine();
-                Immagine foto=new Immagine(nome);
+                Immagine[] foto=new Immagine[5];
+                for(int i=0;i<5;i++)
+                {
+                    String nome=input2.nextLine();
+                    foto[i]=new Immagine(nome);
+                }
+                for(int i=0;i<5;i++)
+                {
+                    System.out.println("quale immagine vuoi visualizzare?");
+                    System.out.println(i+")"+foto[i].toString());
+                }
+                int selector2=input2.nextInt();
+                foto[selector2].show();
                 input2.close();
                 break;
             }
