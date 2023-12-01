@@ -28,7 +28,6 @@ public class Main
                    String titolo=input2.nextLine();
                    Audio canzone=new Audio(titolo);
                    riproduttore[i]=canzone;
-
                    break;
                 }
                 case 2:
@@ -38,7 +37,6 @@ public class Main
                     String titolo=input2.nextLine();
                     Video film=new Video(titolo);
                     riproduttore[i]=film;
-
                     break;
                 }
                 case 3:
@@ -51,11 +49,26 @@ public class Main
                     break;
                 }
             }
-
         }
         for(int i=0;i<riproduttore.length;i++)
         {
+            System.out.println(i+")cosa vuoi riprodurre?");
             System.out.println(riproduttore[i]);
+        }
+        Scanner input2=new Scanner(System.in);
+        int j=input2.nextInt();
+        if(riproduttore[j] instanceof Audio)
+        {
+            ((Audio) riproduttore[j]).play();
+        }
+        else if(riproduttore[j] instanceof Video)
+        {
+            ((Video) riproduttore[j]).play();
+            ((Video) riproduttore[j]).show();
+        }
+        else if(riproduttore[j] instanceof Immagine)
+        {
+            ((Immagine) riproduttore[j]).show();
         }
         input.close();
     }
