@@ -14,80 +14,52 @@ public class Main
         System.out.println("cosa vuoi fare?");
         System.out.println("1)inserisci nuova canzone-2)inserisci nuovo video-3)inserisci nuova immagine");
         int selector;
+        Multimedia [] riproduttore= new Multimedia[5];
 
+        int selectore=0;
         Scanner input=new Scanner(System.in);
-        selector=input.nextInt();
-        switch (selector)
+        for(int i=0;i< riproduttore.length;i++)
         {
-            case 1:
+            selectore=input.nextInt();
+            switch (selectore)
             {
-                Scanner input2=new Scanner(System.in);
-                System.out.println("inserisci il titolo di 5 canzoni");
-                Audio []canzone=new Audio[5];
-                for(int i=0;i<5;i++)
+                case 1:
                 {
+                   System.out.println("inserisci il titolo canzone");
+                   Scanner input2=new Scanner(System.in);
+                   String titolo=input2.nextLine();
+                   Audio canzone=new Audio(titolo);
+                   riproduttore[i]=canzone;
+                   input2.close();
+                   break;
+                }
+                case 2:
+                {
+                    System.out.println("inserisci il titolo del film");
+                    Scanner input2=new Scanner(System.in);
                     String titolo=input2.nextLine();
-                    canzone[i]=new Audio(titolo);
+                    Video film=new Video(titolo);
+                     riproduttore[i]=film;
+                    input2.close();
+                    break;
                 }
-                for(int i=0;i<5;i++)
+                case 3:
                 {
-                    System.out.println("quale canzone vuoi riprodurre?");
-                    System.out.println(i+")"+canzone[i].toString());
-                }
-                int selector2=input2.nextInt();
-                
-
-                canzone[selector2].play();
-                input2.close();
-                break;
-            }
-            case 2:
-            {
-                Scanner input2=new Scanner(System.in);
-                System.out.println("inserisci il titolo di 5 film");
-                Video[]film=new Video[5];
-                for(int i=0;i<5;i++)
-                {
-                    String titolo=input2.nextLine();
-                    film[i]=new Video(titolo);
-                }
-                for(int i=0;i<5;i++)
-                {
-                    System.out.println("quale film vuoi riprodurre?");
-                    System.out.println(i+")"+film[i].toString());
-                }
-                int selector2=input2.nextInt();
-                film[selector2].play();
-                film[selector2].show();
-                input2.close();
-                break;
-            }
-            case 3:
-            {
-                System.out.println("inserisci il titolo di 5 immagini");
-                Scanner input2=new Scanner(System.in);
-                Immagine[] foto=new Immagine[5];
-                for(int i=0;i<5;i++)
-                {
+                    System.out.println("inserisci il nome dell immagine");
+                    Scanner input2=new Scanner(System.in);
                     String nome=input2.nextLine();
-                    foto[i]=new Immagine(nome);
+                    Immagine foto=new Immagine(nome);
+
+                    riproduttore[i]=foto;
+                    break;
                 }
-                for(int i=0;i<5;i++)
-                {
-                    System.out.println("quale immagine vuoi visualizzare?");
-                    System.out.println(i+")"+foto[i].toString());
-                }
-                int selector2=input2.nextInt();
-                foto[selector2].show();
-                input2.close();
-                break;
             }
+            input.close();
+        }
+        for(int i=0;i<riproduttore.length;i++)
+        {
+            System.out.println(riproduttore[i]);
         }
 
-
-
-
-
-        input.close();
     }
 }
