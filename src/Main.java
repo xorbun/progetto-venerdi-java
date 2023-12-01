@@ -65,8 +65,8 @@ public class Main
         if(riproduttore[j] instanceof Audio)
         {
             System.out.println("1)alza volume-2)abbassa volume-3)niente");
-            int volu=input2.nextInt();
-            switch (volu)
+            int setter=input2.nextInt();
+            switch (setter)
             {
                 case 1:
                 {
@@ -88,8 +88,8 @@ public class Main
         else if(riproduttore[j] instanceof Video)
         {
             System.out.println("1)alza volume e luminosità-2)abbassa volume e luminosità-3)niente");
-            int volu=input2.nextInt();
-            switch (volu)
+            int setter=input2.nextInt();
+            switch (setter)
             {
                 case 1:
                 {
@@ -115,8 +115,8 @@ public class Main
         else if(riproduttore[j] instanceof Immagine)
         {
             System.out.println("1)alza  luminosità-2)abbassa  luminosità-3)niente");
-            int volu=input2.nextInt();
-            switch (volu)
+            int setter=input2.nextInt();
+            switch (setter)
             {
                 case 1:
                 {
