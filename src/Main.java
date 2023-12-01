@@ -3,11 +3,16 @@ import multimediaclass.Audio;
 import multimediaclass.Video;
 import multimediaclass.Immagine;
 
+//l'utente può inserire solo il titolo dell' audio/film o nome dell immagine. la proprietà durata viene
+//generata casualmente ogni volte che viene creata un istanza
+//luminosità e volume sono settati a 5 di default alla creazione di un' istanza
+
 
 import java.util.Scanner;
 
 public class Main
 {
+    //
     public static void main(String[] args)
     {
         int i;
